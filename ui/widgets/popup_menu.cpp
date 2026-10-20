@@ -601,6 +601,9 @@ void PopupMenu::handleMouseMove(QPoint globalPosition) {
 void PopupMenu::handleMousePress(QPoint globalPosition) {
 	if (_parent) {
 		_parent->forwardMousePress(globalPosition);
+	} else if (_activeSubmenu
+			&& _activeSubmenu->geometry().contains(globalPosition)) {
+		_activeSubmenu->forwardMousePress(globalPosition);
 	} else {
 		hideMenu();
 	}
@@ -609,6 +612,9 @@ void PopupMenu::handleMousePress(QPoint globalPosition) {
 void PopupMenu::handleMouseRelease(QPoint globalPosition) {
 	if (_parent) {
 		_parent->forwardMouseRelease(globalPosition);
+	} else if (_activeSubmenu
+			&& _activeSubmenu->geometry().contains(globalPosition)) {
+		_activeSubmenu->forwardMouseRelease(globalPosition);
 	} else {
 		hideMenu();
 	}

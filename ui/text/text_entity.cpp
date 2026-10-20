@@ -1857,7 +1857,7 @@ void ParseEntities(TextWithEntities &result, int32 flags) {
 			newEntities.push_back(entity);
 		}
 		if (lnkStart >= existingEntityEnd) {
-			result.entities.push_back({ lnkType, lnkStart, lnkLength });
+			newEntities.push_back({ lnkType, lnkStart, lnkLength });
 		}
 
 		offset = matchOffset = lnkStart + lnkLength;

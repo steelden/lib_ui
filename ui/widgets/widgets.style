@@ -978,7 +978,8 @@ defaultMenu: Menu {
 	arrow: defaultMenuArrow;
 
 	widthMin: 156px;
-	widthMax: 300px;
+	// MTS Link: the long items of the menus (Russian) are not cut.
+	widthMax: 400px;
 
 	ripple: defaultRippleAnimation;
 }
